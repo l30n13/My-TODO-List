@@ -20,6 +20,12 @@
 		35D6B3E72843660100321698 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35D6B3E62843660100321698 /* HomeViewModel.swift */; };
 		35D6B3E92843666E00321698 /* ToDoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35D6B3E82843666E00321698 /* ToDoModel.swift */; };
 		35D6B3ED2843671400321698 /* ToDoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35D6B3EC2843671400321698 /* ToDoViewModel.swift */; };
+		35D6B3F028437BA400321698 /* CreateTODOViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35D6B3EF28437BA400321698 /* CreateTODOViewController.swift */; };
+		35D6B3F3284380D400321698 /* CustomUITextFiled.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35D6B3F2284380D400321698 /* CustomUITextFiled.swift */; };
+		35D6B3F528438DDF00321698 /* CustomUITextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35D6B3F428438DDF00321698 /* CustomUITextView.swift */; };
+		35D6B3F728439A9F00321698 /* CreateTODOViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35D6B3F628439A9F00321698 /* CreateTODOViewModel.swift */; };
+		35D6B3FA2843A16C00321698 /* IHProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = 35D6B3F92843A16C00321698 /* IHProgressHUD */; };
+		35D6B3FD2843A78700321698 /* CreateTODODelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35D6B3FC2843A78700321698 /* CreateTODODelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +43,11 @@
 		35D6B3E62843660100321698 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		35D6B3E82843666E00321698 /* ToDoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoModel.swift; sourceTree = "<group>"; };
 		35D6B3EC2843671400321698 /* ToDoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoViewModel.swift; sourceTree = "<group>"; };
+		35D6B3EF28437BA400321698 /* CreateTODOViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTODOViewController.swift; sourceTree = "<group>"; };
+		35D6B3F2284380D400321698 /* CustomUITextFiled.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomUITextFiled.swift; sourceTree = "<group>"; };
+		35D6B3F428438DDF00321698 /* CustomUITextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomUITextView.swift; sourceTree = "<group>"; };
+		35D6B3F628439A9F00321698 /* CreateTODOViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTODOViewModel.swift; sourceTree = "<group>"; };
+		35D6B3FC2843A78700321698 /* CreateTODODelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTODODelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +55,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				35D6B3FA2843A16C00321698 /* IHProgressHUD in Frameworks */,
 				35D6B3DE28433CD500321698 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -92,6 +104,8 @@
 		35D6B3CA28432E0600321698 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				35D6B3FB2843A77500321698 /* Protocols */,
+				35D6B3F12843808C00321698 /* CustomView */,
 				35D6B3E32843428000321698 /* Base */,
 				35D6B3D92843352300321698 /* Enums */,
 				35D6B3CE28432F0A00321698 /* Extensions */,
@@ -156,6 +170,7 @@
 		35D6B3D228432F8F00321698 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				35D6B3F628439A9F00321698 /* CreateTODOViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -163,6 +178,7 @@
 		35D6B3D328432F9700321698 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				35D6B3EF28437BA400321698 /* CreateTODOViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -215,6 +231,23 @@
 			path = Common;
 			sourceTree = "<group>";
 		};
+		35D6B3F12843808C00321698 /* CustomView */ = {
+			isa = PBXGroup;
+			children = (
+				35D6B3F2284380D400321698 /* CustomUITextFiled.swift */,
+				35D6B3F428438DDF00321698 /* CustomUITextView.swift */,
+			);
+			path = CustomView;
+			sourceTree = "<group>";
+		};
+		35D6B3FB2843A77500321698 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				35D6B3FC2843A78700321698 /* CreateTODODelegate.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -233,6 +266,7 @@
 			name = "my to do list";
 			packageProductDependencies = (
 				35D6B3DD28433CD500321698 /* SnapKit */,
+				35D6B3F92843A16C00321698 /* IHProgressHUD */,
 			);
 			productName = "my to do list";
 			productReference = 35D6B3B228432D9300321698 /* my to do list.app */;
@@ -264,6 +298,7 @@
 			mainGroup = 35D6B3A928432D9300321698;
 			packageReferences = (
 				35D6B3DC28433CD500321698 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				35D6B3F82843A16C00321698 /* XCRemoteSwiftPackageReference "IHProgressHUD" */,
 			);
 			productRefGroup = 35D6B3B328432D9300321698 /* Products */;
 			projectDirPath = "";
@@ -293,12 +328,17 @@
 			files = (
 				35D6B3ED2843671400321698 /* ToDoViewModel.swift in Sources */,
 				35D6B3E52843442500321698 /* ToDoTableViewCell.swift in Sources */,
+				35D6B3F728439A9F00321698 /* CreateTODOViewModel.swift in Sources */,
 				35D6B3E028433DEB00321698 /* HomeViewController.swift in Sources */,
 				35D6B3DB2843352C00321698 /* UserDefaultsKeys.swift in Sources */,
 				35D6B3E72843660100321698 /* HomeViewModel.swift in Sources */,
 				35D6B3B628432D9300321698 /* AppDelegate.swift in Sources */,
 				35D6B3D8284334AC00321698 /* UserDefaults+Extension.swift in Sources */,
+				35D6B3F528438DDF00321698 /* CustomUITextView.swift in Sources */,
 				35D6B3D6284333D800321698 /* Managers.swift in Sources */,
+				35D6B3FD2843A78700321698 /* CreateTODODelegate.swift in Sources */,
+				35D6B3F3284380D400321698 /* CustomUITextFiled.swift in Sources */,
+				35D6B3F028437BA400321698 /* CreateTODOViewController.swift in Sources */,
 				35D6B3E22843426000321698 /* BaseViewController.swift in Sources */,
 				35D6B3E92843666E00321698 /* ToDoModel.swift in Sources */,
 			);
@@ -518,6 +558,14 @@
 				minimumVersion = 5.0.0;
 			};
 		};
+		35D6B3F82843A16C00321698 /* XCRemoteSwiftPackageReference "IHProgressHUD" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Swiftify-Corp/IHProgressHUD.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.1.8;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -525,6 +573,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 35D6B3DC28433CD500321698 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
+		};
+		35D6B3F92843A16C00321698 /* IHProgressHUD */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 35D6B3F82843A16C00321698 /* XCRemoteSwiftPackageReference "IHProgressHUD" */;
+			productName = IHProgressHUD;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

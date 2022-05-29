@@ -9,7 +9,6 @@ import UIKit
 import SnapKit
 
 class HomeViewController: BaseViewController {
-    
     lazy var tableView: UITableView = {
         let table = UITableView()
         table.delegate = self
@@ -53,6 +52,12 @@ extension HomeViewController {
         }
         tableView.register(ToDoTableViewCell.self, forCellReuseIdentifier: cellID)
         
+        loadData()
+    }
+}
+
+extension HomeViewController {
+    func loadData() {
         viewModel.fetchToDoData { [weak self] (response) in
             if response {
                 self?.tableView.reloadData()
@@ -63,7 +68,8 @@ extension HomeViewController {
 
 extension HomeViewController {
     @objc func openNewNote() {
-        print("sfsfd")
+        let vc = CreateTODOViewController(delegate: self)
+        navigationController?.pushViewController(vc, animated: true)
     }
 }
 
@@ -87,5 +93,13 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
+    }
+}
+
+extension HomeViewController: CreateTODODelegate {
+    func onSuccessfulCreateTODO(isSuccess: Bool) {
+        if isSuccess {
+            loadData()
+        }
     }
 }

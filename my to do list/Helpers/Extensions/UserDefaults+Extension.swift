@@ -12,7 +12,7 @@ extension UserDefaults {
         return object(forKey: keyName.rawValue) != nil
     }
     
-    func setData(_ value: Data?, forKey keyName: UserDefaultsKeys) {
+    func setData(forKey keyName: UserDefaultsKeys, _ value: Data?) {
         setValue(value, forKey: keyName.rawValue)
     }
     
