@@ -8,14 +8,14 @@
 import Foundation
 
 class HomeViewModel {
-    var todoListViewModel: [ToDoViewModel]?
+    var todoListViewModel: [ToDoModel]?
     let noDataFound = "No TODO List found.\nPlease add first."
     
     func fetchToDoData(completion: @escaping (Bool) -> Void) {
-        //        loadTestData()
+//                loadTestData()
         if Managers.defaultStorage.hasData(forKey: .TODO_DATA) {
             if let todoList = Managers.defaultStorage.getData(forKey: .TODO_DATA, model: ToDoModel.self), todoList.count > 0 {
-                todoListViewModel = todoList.map(ToDoViewModel.init)
+                todoListViewModel = todoList
                 completion(true)
             } else {
                 completion(false)
@@ -23,6 +23,11 @@ class HomeViewModel {
         } else {
             completion(false)
         }
+    }
+    
+    func deleteToDoData() {
+        let data = try? JSONEncoder().encode(todoListViewModel)
+        Managers.defaultStorage.setData(forKey: .TODO_DATA, data)
     }
     
     private func loadTestData() {

@@ -91,8 +91,13 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         
+        if editingStyle == .delete {
+            viewModel.todoListViewModel?.remove(at: indexPath.row)
+            viewModel.deleteToDoData()
+            tableView.deleteRows(at: [indexPath], with: .bottom)
+        }
     }
 }
 

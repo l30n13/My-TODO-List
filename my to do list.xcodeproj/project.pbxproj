@@ -19,7 +19,6 @@
 		35D6B3E52843442500321698 /* ToDoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35D6B3E42843442500321698 /* ToDoTableViewCell.swift */; };
 		35D6B3E72843660100321698 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35D6B3E62843660100321698 /* HomeViewModel.swift */; };
 		35D6B3E92843666E00321698 /* ToDoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35D6B3E82843666E00321698 /* ToDoModel.swift */; };
-		35D6B3ED2843671400321698 /* ToDoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35D6B3EC2843671400321698 /* ToDoViewModel.swift */; };
 		35D6B3F028437BA400321698 /* CreateTODOViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35D6B3EF28437BA400321698 /* CreateTODOViewController.swift */; };
 		35D6B3F3284380D400321698 /* CustomUITextFiled.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35D6B3F2284380D400321698 /* CustomUITextFiled.swift */; };
 		35D6B3F528438DDF00321698 /* CustomUITextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35D6B3F428438DDF00321698 /* CustomUITextView.swift */; };
@@ -42,7 +41,6 @@
 		35D6B3E42843442500321698 /* ToDoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoTableViewCell.swift; sourceTree = "<group>"; };
 		35D6B3E62843660100321698 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		35D6B3E82843666E00321698 /* ToDoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoModel.swift; sourceTree = "<group>"; };
-		35D6B3EC2843671400321698 /* ToDoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoViewModel.swift; sourceTree = "<group>"; };
 		35D6B3EF28437BA400321698 /* CreateTODOViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTODOViewController.swift; sourceTree = "<group>"; };
 		35D6B3F2284380D400321698 /* CustomUITextFiled.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomUITextFiled.swift; sourceTree = "<group>"; };
 		35D6B3F428438DDF00321698 /* CustomUITextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomUITextView.swift; sourceTree = "<group>"; };
@@ -82,8 +80,8 @@
 		35D6B3B428432D9300321698 /* my to do list */ = {
 			isa = PBXGroup;
 			children = (
-				35D6B3EE284368D400321698 /* Common */,
 				35D6B3CB28432E1300321698 /* Modules */,
+				35D6B3EE284368D400321698 /* CommonModels */,
 				35D6B3CA28432E0600321698 /* Helpers */,
 				35D6B3B528432D9300321698 /* AppDelegate.swift */,
 				35D6B3BE28432D9A00321698 /* Assets.xcassets */,
@@ -206,29 +204,12 @@
 			path = Base;
 			sourceTree = "<group>";
 		};
-		35D6B3EA284366EC00321698 /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-				35D6B3EC2843671400321698 /* ToDoViewModel.swift */,
-			);
-			path = ViewModels;
-			sourceTree = "<group>";
-		};
-		35D6B3EB284366F600321698 /* Models */ = {
+		35D6B3EE284368D400321698 /* CommonModels */ = {
 			isa = PBXGroup;
 			children = (
 				35D6B3E82843666E00321698 /* ToDoModel.swift */,
 			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		35D6B3EE284368D400321698 /* Common */ = {
-			isa = PBXGroup;
-			children = (
-				35D6B3EB284366F600321698 /* Models */,
-				35D6B3EA284366EC00321698 /* ViewModels */,
-			);
-			path = Common;
+			path = CommonModels;
 			sourceTree = "<group>";
 		};
 		35D6B3F12843808C00321698 /* CustomView */ = {
@@ -326,7 +307,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				35D6B3ED2843671400321698 /* ToDoViewModel.swift in Sources */,
 				35D6B3E52843442500321698 /* ToDoTableViewCell.swift in Sources */,
 				35D6B3F728439A9F00321698 /* CreateTODOViewModel.swift in Sources */,
 				35D6B3E028433DEB00321698 /* HomeViewController.swift in Sources */,
