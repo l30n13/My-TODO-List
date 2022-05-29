@@ -104,7 +104,7 @@
 			children = (
 				35D6B3FB2843A77500321698 /* Protocols */,
 				35D6B3F12843808C00321698 /* CustomView */,
-				35D6B3E32843428000321698 /* Base */,
+				35D6B3E32843428000321698 /* BaseView */,
 				35D6B3D92843352300321698 /* Enums */,
 				35D6B3CE28432F0A00321698 /* Extensions */,
 				35D6B3C928432DF900321698 /* Manager */,
@@ -196,12 +196,12 @@
 			path = Enums;
 			sourceTree = "<group>";
 		};
-		35D6B3E32843428000321698 /* Base */ = {
+		35D6B3E32843428000321698 /* BaseView */ = {
 			isa = PBXGroup;
 			children = (
 				35D6B3E12843426000321698 /* BaseViewController.swift */,
 			);
-			path = Base;
+			path = BaseView;
 			sourceTree = "<group>";
 		};
 		35D6B3EE284368D400321698 /* CommonModels */ = {
