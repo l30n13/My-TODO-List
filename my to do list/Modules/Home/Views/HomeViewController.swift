@@ -1,0 +1,67 @@
+//
+//  HomeViewController.swift
+//  my to do list
+//
+//  Created by Mahbubur Rashid Leon on 29/5/22.
+//
+
+import UIKit
+import SnapKit
+
+class HomeViewController: BaseViewController {
+    
+    lazy var tableView: UITableView = {
+        let table = UITableView()
+        table.delegate = self
+        table.dataSource = self
+        table.separatorStyle = .none
+        table.showsHorizontalScrollIndicator = false
+        table.showsVerticalScrollIndicator = false
+        return table
+    }()
+    
+    lazy var navBarButton: UIBarButtonItem = {
+        let button = UIBarButtonItem(image: UIImage(systemName: "square.and.pencil"), style: .plain, target: self, action: #selector(openNewNote))
+        return button
+    }()
+    let cellID = "cellID"
+}
+
+extension HomeViewController {
+    override func setupUI() {
+        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationItem.title = "TODO"
+        navigationItem.setRightBarButton(navBarButton, animated: true)
+        
+        view.addSubview(tableView)
+        tableView.snp.makeConstraints { make in
+            make.top.equalTo(view.snp.top).offset(20)
+            make.leading.equalTo(view.snp.leading)
+            make.trailing.equalTo(view.snp.trailing)
+            make.bottom.equalTo(view.snp.bottom)
+        }
+        
+        tableView.register(ToDoTableViewCell.self, forCellReuseIdentifier: cellID)
+    }
+}
+
+extension HomeViewController {
+    @objc func openNewNote() {
+        print("sfsfd")
+    }
+}
+
+extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 10
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath) as! ToDoTableViewCell
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+    }
+}
