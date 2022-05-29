@@ -9,7 +9,7 @@ import Foundation
 
 class HomeViewModel {
     var todoListViewModel: [ToDoViewModel]?
-    var noDataFound = "No TODO List found.\nPlease add first."
+    let noDataFound = "No TODO List found.\nPlease add first."
     
     func fetchToDoData(completion: @escaping (Bool) -> Void) {
         if Managers.defaultStorage.hasData(forKey: .TODO_DATA) {

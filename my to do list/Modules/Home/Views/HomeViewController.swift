@@ -22,7 +22,8 @@ class HomeViewController: BaseViewController {
     
     lazy var noDataLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont(name: "Avenir Next Medium", size: 40)
+        label.font = UIFont(name: "Avenir Next Medium", size: 30)
+        label.textColor = .red
         label.textAlignment = .center
         label.sizeToFit()
         return label
@@ -50,8 +51,13 @@ extension HomeViewController {
             make.trailing.equalTo(view.snp.trailing)
             make.bottom.equalTo(view.snp.bottom)
         }
-        
         tableView.register(ToDoTableViewCell.self, forCellReuseIdentifier: cellID)
+        
+        viewModel.fetchToDoData { [weak self] (response) in
+            if response {
+                self?.tableView.reloadData()
+            }
+        }
     }
 }
 
@@ -67,6 +73,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             tableView.backgroundView = nil
             return list.count
         } else {
+            noDataLabel.text = viewModel.noDataFound
             tableView.backgroundView = noDataLabel
             return 0
         }
