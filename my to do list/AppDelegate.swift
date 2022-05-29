@@ -9,12 +9,32 @@ import UIKit
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
     var window: UIWindow?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        setupDefaultNavigationBarStyle()
+        setupEntryPoint()
         return true
     }
 }
 
+
+extension AppDelegate {
+    func setupDefaultNavigationBarStyle() {
+        UINavigationBar.appearance().titleTextAttributes = [
+            .font: UIFont(name: "Avenir Next Medium", size: 20)!
+        ]
+        UINavigationBar.appearance().largeTitleTextAttributes = [
+            .font: UIFont(name: "Avenir Next Bold", size: 30)!
+        ]
+    }
+    
+    func setupEntryPoint() {
+        let window = UIWindow(frame: UIScreen.main.bounds)
+        let viewController = HomeViewController()
+        let navigationController = UINavigationController(rootViewController: viewController)
+        window.rootViewController = navigationController
+        window.makeKeyAndVisible()
+        self.window = window
+    }
+}
