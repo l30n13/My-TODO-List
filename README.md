@@ -11,7 +11,7 @@ This is a very simple TODO application.
 - Edit current TODO from the existing list
 
 
-In this project I tried to implement ``` MVVM``` is used as Structure pattern along with ```clean code```
+In this project I tried to implement ``` MVVM``` Structure pattern along with ```clean code```
 
 ### In the following here is the folder structure
 + Modules
