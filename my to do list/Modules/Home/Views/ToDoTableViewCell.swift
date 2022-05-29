@@ -76,3 +76,9 @@ extension ToDoTableViewCell {
         }
     }
 }
+extension ToDoTableViewCell {
+    func setupData(data: ToDoViewModel?) {
+        titleLabel.text = data?.titleString
+        detailsLabel.text = data?.detailsString
+    }
+}

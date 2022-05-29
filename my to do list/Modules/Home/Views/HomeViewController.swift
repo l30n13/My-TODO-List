@@ -20,11 +20,21 @@ class HomeViewController: BaseViewController {
         return table
     }()
     
+    lazy var noDataLabel: UILabel = {
+        let label = UILabel()
+        label.font = UIFont(name: "Avenir Next Medium", size: 40)
+        label.textAlignment = .center
+        label.sizeToFit()
+        return label
+    }()
+    
     lazy var navBarButton: UIBarButtonItem = {
         let button = UIBarButtonItem(image: UIImage(systemName: "square.and.pencil"), style: .plain, target: self, action: #selector(openNewNote))
         return button
     }()
+    
     let cellID = "cellID"
+    let viewModel = HomeViewModel()
 }
 
 extension HomeViewController {
@@ -53,11 +63,18 @@ extension HomeViewController {
 
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        if let list = viewModel.todoListViewModel, list.count > 0 {
+            tableView.backgroundView = nil
+            return list.count
+        } else {
+            tableView.backgroundView = noDataLabel
+            return 0
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath) as! ToDoTableViewCell
+        cell.setupData(data: viewModel.todoListViewModel?[indexPath.row])
         return cell
     }
     

@@ -16,10 +16,10 @@ extension UserDefaults {
         setValue(value, forKey: keyName.rawValue)
     }
     
-    func getData<T: Codable>(forKey keyName: UserDefaultsKeys, model: T.Type) -> Any? {
+    func getData<T: Codable>(forKey keyName: UserDefaultsKeys, model: T.Type) -> [T]? {
         guard let data  = object(forKey: keyName.rawValue) as? Data else {
             return nil
         }
-        return try? JSONDecoder().decode(T.self, from: data)
+        return try? JSONDecoder().decode([T].self, from: data)
     }
 }
