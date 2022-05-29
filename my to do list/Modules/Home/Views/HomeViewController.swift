@@ -40,7 +40,7 @@ class HomeViewController: BaseViewController {
 extension HomeViewController {
     override func setupUI() {
         navigationController?.navigationBar.prefersLargeTitles = true
-        navigationItem.title = "TODO"
+        navigationItem.title = "My TODO List"
         navigationItem.setRightBarButton(navBarButton, animated: true)
         
         view.addSubview(tableView)
